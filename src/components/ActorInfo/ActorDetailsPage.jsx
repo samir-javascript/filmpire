@@ -5,6 +5,7 @@ import { useGetPersonDetailsQuery , useGetActorMoviesQuery} from '../../services
 import { GridSpaceAround, Poster } from './styles'
 import { ArrowBack } from '@mui/icons-material'
 import { MoviesList, Pagination } from '..'
+import { Helmet } from 'react-helmet-async';
 const ActorDetailsPage = () => {
   const navigate = useNavigate()
   const [page,setPage] = useState(1)
@@ -30,6 +31,11 @@ const ActorDetailsPage = () => {
   return (
     <>
     <GridSpaceAround container >
+    <Helmet>
+        <title> {data?.name} - Filmpire</title>
+        <meta name='description' content={data?.biography}/>
+        
+      </Helmet>
         <Grid item sm={12} lg={4} >
            <Poster src={`https://image.tmdb.org/t/p/w500/${data?.profile_path}`} alt={data?.name} />
         </Grid>

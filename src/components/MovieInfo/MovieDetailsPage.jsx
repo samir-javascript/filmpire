@@ -11,6 +11,7 @@ import genreIcons from '../../assets/genres/index'
 
 import { selectGenreOrGategory } from '../../features/CurrentGenreOrCategory'
 import MoviesList from '../MoviesList/MoviesList'
+import { Helmet } from 'react-helmet-async';
 //import Pagination from '../pagination/Pagination'
 const MovieDetailsPage = () => {
     const navigate = useNavigate()
@@ -98,6 +99,12 @@ const MovieDetailsPage = () => {
  }
   return (
     <GridSpaceAround container>
+       <Helmet>
+       <meta name='description' content={data?.overview}/>
+        <title> {data?.title} - Filmpire</title>
+         
+        
+      </Helmet>
           <Grid item sm={12} lg={4} >
               <Poster src={`https://image.tmdb.org/t/p/w500/${data?.poster_path}`} alt={data?.title} />
           </Grid>

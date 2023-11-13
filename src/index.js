@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom'
 import ToggleModeColorProvider from './utils/index'
 import { Provider } from 'react-redux'
 import { store } from './store';
+import { HelmetProvider } from 'react-helmet-async';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
@@ -15,7 +16,10 @@ root.render(
     <Provider store={store}>
    <ToggleModeColorProvider>
     <BrowserRouter >
-       <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+     
     </BrowserRouter>
     </ToggleModeColorProvider>
     </Provider>
