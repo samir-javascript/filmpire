@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 
-function App() {
+
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { CssBaseline } from '@mui/material';
+import { useRef } from 'react';
+import { ToastContainer } from 'react-toastify';
+import {Home, MovieDetailsPage, ProfilePage , Navbar, ActorDetailsPage, Actors} from './components/index'
+import NotFound from './components/Notfound/NotFound';
+import useAlan from './components/Alan';
+export default function App() {
+   const alanBtnContainer = useRef()
+   useAlan()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+     <div className='root'>
+       <CssBaseline />
+        <Navbar />
+        <main className='content'>
+         <div className='toolbar'/>
+            <Routes>
+            <Route index={true} path={'/'} element={<Home />} />
+            <Route index  path="/approved" element={<Home />} /> 
+               <Route  path='/movies/:id' element={<MovieDetailsPage />}/>
+               <Route path='/profile/:id' element={<ProfilePage />}/>
+               <Route  path='/actors' element={<Actors />}/>
+               <Route path='/actors/:id' element={<ActorDetailsPage />}/>
+               <Route path='*' element={<NotFound />}/>
+            </Routes>
+           
+        </main>
+        <div ref={alanBtnContainer}/>
+        <ToastContainer />
+     </div>
+  )
 }
-
-export default App;

@@ -1,13 +1,66 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.root {
+   display: flex;
+    height: 100%;
+    position: relative;
+}
+.toolbar {
+    height: 70px;
+}
+.content {
+    flex-grow: 1;
+    padding: 2em;
+    width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  /* this is the logo  */
+.image-link  {
+    display: flex;
+    padding: 10% 0;
+    justify-content: center;
 }
+
+.image {
+    width: 70%;
+    
+}
+.notfound-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+   background-color: #cfcfcf;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #a5a5a5;
+ }
+ .featured-container {
+    display: flex;
+    justify-content: center;
+    height: 490px;
+    margin-bottom: 20px;
+    text-decoration: none;
+ }
+ .featured-card {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: end;
+    position:relative;
+ }
+ .card-media {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    background-color: rgba(0,0,0,0.575);
+    background-blend-mode: darken;
+ }
