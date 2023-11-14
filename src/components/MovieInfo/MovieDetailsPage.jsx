@@ -191,6 +191,7 @@ const MovieDetailsPage = () => {
                {recommendedMovies ? (
                  <MoviesList movies={recommendedMovies} numberOfMovies={12} />
                ) : (
+                  // eslint-disable-next-line react/no-unescaped-entities
                   <Typography>sorry, there's no recommended movies for this movie</Typography>
                )}
               

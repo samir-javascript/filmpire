@@ -1,3 +1,5 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react/prop-types */
 
 import MovieContainer from './styles'
 import {Movie} from '../index'

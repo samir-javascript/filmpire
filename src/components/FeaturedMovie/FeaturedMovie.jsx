@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { CardContentStyles } from './styles';
 
+// eslint-disable-next-line react/prop-types
 const FeaturedMovie = ({movie}) => {
   const truncate = function(str,n) {
      return str > n ? str : str.substring(str,n) + '...';

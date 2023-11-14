@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 
 import { Box, CircularProgress, Typography, useMediaQuery } from '@mui/material'
 

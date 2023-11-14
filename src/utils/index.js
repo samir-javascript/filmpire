@@ -1,3 +1,5 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react/prop-types */
 import { useMemo , useState  ,createContext } from "react";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Box, Grid, Grow, Rating, Tooltip, } from '@mui/material'
 import React from 'react'
 import  { Imagestyles, LinksStyles , Title} from './styles'

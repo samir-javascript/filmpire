@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState} from 'react'
 import { useLocation } from 'react-router-dom'
 import { Search as SearchIcon } from '@mui/icons-material'
 
 import {  useDispatch } from 'react-redux'
 import { SearchContainer, SearchDiv, SearchIconWrapper, StyledInputBase} from './styles'
 import { searchMovie } from '../../features/CurrentGenreOrCategory'
-import { Helmet } from 'react-helmet'
+
 
 export default function Search() {
   const [query, setQuery] = useState('')

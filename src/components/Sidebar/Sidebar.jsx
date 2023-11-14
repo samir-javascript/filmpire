@@ -9,6 +9,7 @@ import { useGetGenreQuery } from '../../services/AMDB';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectGenreOrGategory } from '../../features/CurrentGenreOrCategory';
 
+// eslint-disable-next-line react/prop-types
 export default function Sidebar ({setMobileOpen})  {
     const {genreIdOrCategoryName} = useSelector((state)=> state.currentGenreOrGategory)
     const dispatch = useDispatch()
