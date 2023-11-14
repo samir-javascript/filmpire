@@ -24,7 +24,7 @@ class ErrorBoundary extends Component {
           <div className='error-container'>
                <p>Something went wrong.</p>
                 <button>
-                    <Link to='/'>Go Back</Link>
+                    <Link style={{ textDecoration:'none'}} to='/'>Go Back</Link>
                 </button>
           </div>
       )
