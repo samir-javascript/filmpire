@@ -44,8 +44,8 @@ const MovieDetailsPage = () => {
           });
           setIsFavorited((prevState) => !prevState);
           const toastMessage = isFavorited
-          ? `${data?.title} has been added to favorite`
-          : `${data?.title} has been removed from favorite`;
+          ? `${data?.title} has been removed to favorite`
+          : `${data?.title} has been added from favorite`;
   
         toast.success(toastMessage);
         } catch (error) {
@@ -69,8 +69,8 @@ const MovieDetailsPage = () => {
           });
           setIsWatchListed((prevState) => !prevState);
           const toastMessage = isWatchListed
-          ? `${data?.title} has been added to watchlist`
-          : `${data?.title} has been removed from watchlist`;
+          ? `${data?.title} has been removed to watchlist`
+          : `${data?.title} has been added from watchlist`;
   
          toast.success(toastMessage);
         } catch (error) {
