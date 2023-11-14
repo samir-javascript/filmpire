@@ -43,6 +43,7 @@ const MovieDetailsPage = () => {
             favorite: !isFavorited
           });
           setIsFavorited((prevState) => !prevState);
+          toast.success(`${data?.title} has been added to favorite`)
         } catch (error) {
           console.log('Error adding to favorites:', error);
         }
@@ -63,6 +64,7 @@ const MovieDetailsPage = () => {
             watchlist: !isWatchListed
           });
           setIsWatchListed((prevState) => !prevState);
+          toast.success(`${data?.title} has been added to watchlist`)
         } catch (error) {
           console.error('Error adding to watchlist movies:', error);
         }

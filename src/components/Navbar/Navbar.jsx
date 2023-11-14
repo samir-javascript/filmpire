@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { AppBar, IconButton, Drawer, Button, Avatar , useMediaQuery} from '@mui/material'
 import { Menu, AccountCircle, Brightness4, Brightness7 } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
@@ -12,7 +12,7 @@ import { setUser , userSelector} from '../../features/Authenticate';
 import { useDispatch, useSelector } from 'react-redux';
 const Navbar = () => {
   const [mobileOpen,setMobileOpen] = useState(false)
-   const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const isMobile = useMediaQuery('(max-width: 600px)');
   const colorMode = useContext(ColorModeContext)
   const theme = useTheme()
@@ -76,7 +76,7 @@ const Navbar = () => {
                   <Button style={{textDecoration: 'none'}} color='inherit' 
                     component={Link}
                     to={`/profile/${user.id}`}
-                    onClick={()=> {}}
+                    
                   >
                     {!isMobile && <>My Movies &nbsp; </>}
                     <Avatar alt='avatar'
