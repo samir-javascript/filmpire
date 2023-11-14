@@ -12,6 +12,7 @@ import genreIcons from '../../assets/genres/index'
 import { selectGenreOrGategory } from '../../features/CurrentGenreOrCategory'
 import MoviesList from '../MoviesList/MoviesList'
 import { Helmet } from 'react-helmet-async';
+import ErrorBoundary from '../MovieErrorBoundary';
 //import Pagination from '../pagination/Pagination'
 const MovieDetailsPage = () => {
     const navigate = useNavigate()
@@ -24,7 +25,7 @@ const MovieDetailsPage = () => {
   const {id} = useParams()
   const {data:favoriteMovies,} = useGetUserListMoviesQuery({listName: '/favorite/movies', accountId: `${user.id}`, sessionId: `${localStorage.getItem('session_id')}`, page:1})
   const {data:watchlistMovies, } = useGetUserListMoviesQuery({listName: '/watchlist/movies', accountId: `${user.id}`, sessionId: `${localStorage.getItem('session_id')}`, page:1})
-  console.log(favoriteMovies, watchlistMovies)
+ 
   const { data: recommendedMovies } = useGetRecommendedMoviesQuery({ movie_id: id, list: 'recommendations' });
   const {data, isFetching, isError} = useGetSingleMovieQuery(id)
   
@@ -99,7 +100,7 @@ const MovieDetailsPage = () => {
     )
  }
   return (
-    
+    <ErrorBoundary>
     <GridSpaceAround container>
        <Helmet>
        <meta name='description' content={data?.overview}/>
@@ -212,6 +213,7 @@ const MovieDetailsPage = () => {
       </ModalStyles>
 
     </GridSpaceAround>
+    </ErrorBoundary>
    
   )
 }
