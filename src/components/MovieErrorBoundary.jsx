@@ -21,9 +21,9 @@ class ErrorBoundary extends Component {
     if (this.state.hasError) {
       // Render a fallback UI
       return (
-          <Box display={'flex'} justifyContent={'center'} marginTop={'2rem'}>
-               <Typography variant='h6'>Something went wrong.
-                <Button variant='outlined'><Link to='/'>Go Back</Link></Button></Typography>
+          <Box flexDirection={'column'} display={'flex'} justifyContent={'center'} marginTop={'2rem'}>
+               <Typography variant='h6'>Something went wrong.</Typography>
+                <Button variant='outlined'><Link to='/'>Go Back</Link></Button>
           </Box>
       )
     }
