@@ -32,7 +32,7 @@ const MovieDetailsPage = () => {
   const [isFavorited,setIsFavorited] = useState(false);
   const [isWatchListed,setIsWatchListed] = useState(false);
 
-  const addTofavorites = async () => {
+  const addTofavorites = async ()=> {
     if(user?.id) {
         const apiUrl = `https://api.themoviedb.org/3/account/${user.id}/favorite?api_key=${process.env.REACT_APP_MOVIE_DB_API_KEY}&session_id=${localStorage.getItem('session_id')}`;
     
@@ -43,19 +43,19 @@ const MovieDetailsPage = () => {
             favorite: !isFavorited
           });
           setIsFavorited((prevState) => !prevState);
-          const toastMessage = isFavorited
-          ? `${data?.title} has been removed to favorite`
-          : `${data?.title} has been added from favorite`;
+          const toastFavoriteMessage = isFavorited
+          ? `${data?.title} has been removed from your favorite`
+          : `${data?.title} has been added to your favorite`;
   
-        toast.success(toastMessage);
+         toast.success(toastFavoriteMessage);
         } catch (error) {
-          console.log('Error adding to favorites:', error);
+          console.error('Error adding to favorite movies:', error);
         }
     }else {
         toast.error('Please log in to add to favorite');
     }
    
-  };
+   }
   
    const addTowatchList = async ()=> {
     if(user?.id) {
@@ -68,11 +68,11 @@ const MovieDetailsPage = () => {
             watchlist: !isWatchListed
           });
           setIsWatchListed((prevState) => !prevState);
-          const toastMessage = isWatchListed
-          ? `${data?.title} has been removed to watchlist`
-          : `${data?.title} has been added from watchlist`;
+          const toastWatchlistMessage = isWatchListed
+          ? `${data?.title} has been removed from your watchlist`
+          : `${data?.title} has been added to your watchlist`;
   
-         toast.success(toastMessage);
+         toast.success(toastWatchlistMessage);
         } catch (error) {
           console.error('Error adding to watchlist movies:', error);
         }
