@@ -28,7 +28,7 @@ const MovieDetailsPage = () => {
  
   const { data: recommendedMovies } = useGetRecommendedMoviesQuery({ movie_id: id, list: 'recommendations' });
   const {data, isFetching, isError} = useGetSingleMovieQuery(id)
-  
+  console.log(data)
   const [isFavorited,setIsFavorited] = useState(false);
   const [isWatchListed,setIsWatchListed] = useState(false);
 
@@ -206,8 +206,20 @@ const MovieDetailsPage = () => {
         closeAfterTransition
       >
          {data.videos.results.length > 0 && (
-         <VideoStyles src={`https://www.youtube.com/embed/${data?.videos.results[0].key}`} 
-         frameBorder="0"  allow='autoplay' title='Trailer'/>
+         <VideoStyles
+         src={
+          
+          data?.videos.results[0]
+          ? `https://www.youtube.com/embed/${data.videos.results[0].key}`
+          : data?.videos.results[1]
+          ? `https://www.youtube.com/embed/${data.videos.results[1].key}`
+          : `https://www.youtube.com/embed/${data.videos.results[2].key}`
+             
+         }
+         frameBorder="0"
+         allow="autoplay"
+         title="Trailer"
+       />
          )}
        
       </ModalStyles>

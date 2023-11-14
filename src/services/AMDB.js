@@ -17,12 +17,13 @@ export const tmdbApi = createApi({
         }
          // get movies by [searchQuery]
          if(searchQuery) {
-          return `/search/movie?query=${searchQuery}&page=${page}&api_key=${tmdbApiKey}`
+           return `search/movie?query=${searchQuery}&page=${page}&api_key=${tmdbApiKey}`
         }
          // get movies by [genres]
          if (genreIdOrCategoryName && typeof genreIdOrCategoryName === 'number') {
           return `discover/movie?with_genres=${genreIdOrCategoryName}&page=${page}&api_key=${tmdbApiKey}`
         }
+        
         return  `movie/popular?page=${page}&api_key=${tmdbApiKey}`
       }, 
     }),

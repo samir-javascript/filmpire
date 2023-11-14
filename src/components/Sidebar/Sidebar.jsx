@@ -32,8 +32,7 @@ export default function Sidebar ({setMobileOpen})  {
     <>
        <Link  to='/' className='image-link'>
            <img className='image'
-            src={theme.palette.mode ==='light' ? redLogo : blueLogo} alt="filmpire" />
-           
+            src={theme.palette.mode ==='light' ? redLogo : blueLogo} alt="filmpire" /> 
        </Link>
        <Divider />
        <List>
