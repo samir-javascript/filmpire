@@ -43,7 +43,11 @@ const MovieDetailsPage = () => {
             favorite: !isFavorited
           });
           setIsFavorited((prevState) => !prevState);
-          toast.success(`${data?.title} has been added to favorite`)
+          const toastMessage = isFavorited
+          ? `${data?.title} has been added to favorite`
+          : `${data?.title} has been removed from favorite`;
+  
+        toast.success(toastMessage);
         } catch (error) {
           console.log('Error adding to favorites:', error);
         }
@@ -64,7 +68,11 @@ const MovieDetailsPage = () => {
             watchlist: !isWatchListed
           });
           setIsWatchListed((prevState) => !prevState);
-          toast.success(`${data?.title} has been added to watchlist`)
+          const toastMessage = isWatchListed
+          ? `${data?.title} has been added to watchlist`
+          : `${data?.title} has been removed from watchlist`;
+  
+         toast.success(toastMessage);
         } catch (error) {
           console.error('Error adding to watchlist movies:', error);
         }
