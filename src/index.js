@@ -8,21 +8,25 @@ import ToggleModeColorProvider from './utils/index'
 import { Provider } from 'react-redux'
 import { store } from './store';
 import { HelmetProvider } from 'react-helmet-async';
+import ErrorBoundary from './components/MovieErrorBoundary';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 root.render(
   <React.StrictMode>
+    <ErrorBoundary>
     <Provider store={store}>
    <ToggleModeColorProvider>
     <BrowserRouter >
     <HelmetProvider>
+      
       <App />
     </HelmetProvider>
      
     </BrowserRouter>
     </ToggleModeColorProvider>
     </Provider>
+    </ErrorBoundary>
   </React.StrictMode>
 );
 

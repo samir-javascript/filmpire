@@ -83,6 +83,7 @@ const MovieDetailsPage = () => {
     const color = ((theme)=> theme.palette.mode === 'dark' ? 'white' : 'black')
   if(isFetching) {
      return (
+      
       <Box display={"flex"} justifyContent={'center'}>
           <CircularProgress  size={"3rem"}/>
       </Box>
@@ -98,6 +99,7 @@ const MovieDetailsPage = () => {
     )
  }
   return (
+    
     <GridSpaceAround container>
        <Helmet>
        <meta name='description' content={data?.overview}/>
@@ -210,6 +212,7 @@ const MovieDetailsPage = () => {
       </ModalStyles>
 
     </GridSpaceAround>
+   
   )
 }
 
