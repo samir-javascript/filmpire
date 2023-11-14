@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from '@mui/material';
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -21,10 +21,12 @@ class ErrorBoundary extends Component {
     if (this.state.hasError) {
       // Render a fallback UI
       return (
-          <Box flexDirection={'column'} display={'flex'} justifyContent={'center'} marginTop={'2rem'}>
-               <Typography variant='h6'>Something went wrong.</Typography>
-                <Button variant='outlined'><Link to='/'>Go Back</Link></Button>
-          </Box>
+          <div className='error-container'>
+               <p>Something went wrong.</p>
+                <button>
+                    <Link to='/'>Go Back</Link>
+                </button>
+          </div>
       )
     }
 

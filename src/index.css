@@ -64,3 +64,26 @@
     background-color: rgba(0,0,0,0.575);
     background-blend-mode: darken;
  }
+
+ .error-container  {
+     display: flex;
+     justify-content: center;
+     margin-top: 7rem;
+     flex-direction: column;
+     gap: 20px;
+ }
+ .error-container p  {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600;
+     line-height: 30px;
+ }
+ .error-container button {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    color: #fff;
+    background-color: black;
+    
+ }
