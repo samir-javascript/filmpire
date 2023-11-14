@@ -1,4 +1,6 @@
+import { Box, Button, Typography } from '@mui/material';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -18,7 +20,12 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       // Render a fallback UI
-      return <h1>Something went wrong. Please try again later.</h1>;
+      return (
+          <Box display={'flex'} justifyContent={'center'} marginTop={'2rem'}>
+               <Typography variant='h6'>Something went wrong.
+                <Button variant='outlined'><Link to='/'>Go Back</Link></Button></Typography>
+          </Box>
+      )
     }
 
     // eslint-disable-next-line react/prop-types
