@@ -12,7 +12,7 @@ const Home = () => {
   const {genreIdOrCategoryName} = useSelector((state)=> state.currentGenreOrGategory)
   const {searchQuery} = useSelector((state)=> state.currentGenreOrGategory)
   const lg = useMediaQuery((theme)=> theme.breakpoints.only('lg'));
-  const numberOfMovies = lg ? 22 : 20;
+  const numberOfMovies = lg ? 18 : 16;
   const {data, isFetching, isError} = useGetMoviesQuery({genreIdOrCategoryName, page, searchQuery})
    if(isFetching) {
     return (
