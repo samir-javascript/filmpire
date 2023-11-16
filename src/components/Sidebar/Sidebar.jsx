@@ -14,11 +14,13 @@ export default function Sidebar ({setMobileOpen})  {
     const {genreIdOrCategoryName} = useSelector((state)=> state.currentGenreOrGategory)
     const dispatch = useDispatch()
     const {data , isFetching} = useGetGenreQuery()
+   
     useEffect(() => {
        setMobileOpen(false)
     }, [genreIdOrCategoryName])
     
     const theme = useTheme()
+    const isDark = theme.palette.mode === 'dark' ? 'white' : 'black'
     const redLogo = 'https://fontmeme.com/permalink/210930/8531c658a743debe1e1aa1a2fc82006e.png';
     const blueLogo = 'https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png';
    
@@ -45,7 +47,7 @@ export default function Sidebar ({setMobileOpen})  {
                         <ListItemIcon>
                             <ImageGenreStyles src={genreIcons[label.toLowerCase()]} width={30} alt="genre img" />
                         </ListItemIcon>
-                        <ListItemText primary={label}/> 
+                        <ListItemText sx={{color: `${isDark}`}}   primary={label}/> 
                      </ListItem>
                 </LinkStyles>
            ))}
@@ -65,7 +67,7 @@ export default function Sidebar ({setMobileOpen})  {
                         <ListItemIcon>
                             <ImageGenreStyles src={genreIcons[name.toLowerCase()]} width={30} alt="genre img" />
                         </ListItemIcon>
-                        <ListItemText primary={name}/> 
+                        <ListItemText sx={{color: `${isDark}`}} primary={name}/> 
                      </ListItem>
                 </LinkStyles>
            )))}

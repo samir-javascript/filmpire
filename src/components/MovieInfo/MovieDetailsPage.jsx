@@ -130,7 +130,7 @@ const MovieDetailsPage = () => {
                        <Typography variant='subtitle1' style={{marginLeft: '10px'}} gutterBottom>{data?.vote_average} / 10</Typography>
                    </Box>
                    <Typography gutterBottom variant='h6' align='center'>
-                       {data?.runtime} min {`/${data?.spoken_languages[0].name}`}
+                       {data?.runtime} min {`/ ${data?.spoken_languages[0].name}`}
                    </Typography>
               </GridSpaceAround>
               <GenreContainer>

@@ -14,6 +14,7 @@ const Navbar = () => {
   const [mobileOpen,setMobileOpen] = useState(false)
   const dispatch = useDispatch()
   const isMobile = useMediaQuery('(max-width: 600px)');
+  const isSmallScreen = useMediaQuery('(max-width: 800px)');
   const colorMode = useContext(ColorModeContext)
   const theme = useTheme()
   const { isAuthenticated, user } = useSelector(userSelector)
@@ -78,7 +79,7 @@ const Navbar = () => {
                     to={`/profile/${user.id}`}
                     
                   >
-                    {!isMobile && <>My Movies &nbsp; </>}
+                    {!isSmallScreen && <>My Movies &nbsp; </>}
                     <Avatar alt='avatar'
                      style={{width: '30px', height: '30px'} }
                        src={`https://themoviedb.org/t/p/w64_and_h64_face${user?.avatar?.tmdb?.avatar_path}`}

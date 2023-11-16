@@ -1,13 +1,13 @@
 // MyStyledButton.js
 
-import { InputBase } from '@mui/material';
+import { InputBase, Stack } from '@mui/material';
 import { styled } from '@mui/system';
 
 import { alpha } from '@mui/material';
-export const SearchContainer = styled('div')(({ theme }) =>({
+export const SearchContainer = styled(Stack)(({ theme }) =>({
    [theme.breakpoints.down('sm')]: {
       display: 'flex',
-      justifyContent: 'center',
+      
       width: '100%',
       
    }
@@ -53,6 +53,7 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
       marginBottom: '10px'
    }
  }));
+ 
 
  export const SearchIconWrapper = styled('div')(({ theme }) => ({
    padding: theme.spacing(0, 2),

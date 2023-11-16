@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 
 export const LinkStyles = styled(Link)(({ theme }) => ({
-    color: theme.palette.text.primary,
+     color: '#000',
      textDecoration: 'none'
  }));
 
